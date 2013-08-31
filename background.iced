@@ -1,4 +1,4 @@
-matcher = /4chan/i
+matcher = new RegExp "^http(s)?\://boards.4chan.org/([a-z]{1,3})/", 'i'
 
 chrome.tabs.onUpdated.addListener (tabId, info, tab) ->
   chrome.pageAction.show tabId if matcher.test tab.url

@@ -116,9 +116,21 @@ PostHighlighter = (function() {
       }));
       __iced_deferrals._fulfill();
     })(function() {
-      return chrome.tabs.sendMessage(tabs[0].id, {
-        action: 'highlight_posts',
-        matcher: matcher
+      (function(__iced_k) {
+        __iced_deferrals = new iced.Deferrals(__iced_k, {
+          parent: ___iced_passed_deferral,
+          filename: "popup.iced",
+          funcname: "PostHighlighter.highlight_posts"
+        });
+        chrome.tabs.sendMessage(tabs[0].id, {
+          action: 'highlight_posts',
+          matcher: matcher
+        }, __iced_deferrals.defer({
+          lineno: 31
+        }));
+        __iced_deferrals._fulfill();
+      })(function() {
+        return window.close();
       });
     });
   };

@@ -29,7 +29,8 @@ class PostHighlighter
 
   highlight_posts: (matcher) ->
     await chrome.tabs.query active: yes, currentWindow: yes, defer(tabs)
-    chrome.tabs.sendMessage tabs[0].id, action: 'highlight_posts', matcher: matcher
+    await chrome.tabs.sendMessage tabs[0].id, action: 'highlight_posts', matcher: matcher, defer()
+    window.close()
 
   highlight_mode_select = document.getElementById 'highlight_mode_select'
   highlight_mode_select.addEventListener 'change', PostHighlighter::on_highlight_mode_changed

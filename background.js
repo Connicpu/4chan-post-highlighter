@@ -43,7 +43,7 @@ iced = {
 };
 __iced_k = __iced_k_noop = function() {};
 
-matcher = /4chan/i;
+matcher = new RegExp("^http(s)?\://boards.4chan.org/([a-z]{1,3})/", 'i');
 
 chrome.tabs.onUpdated.addListener(function(tabId, info, tab) {
   if (matcher.test(tab.url)) {

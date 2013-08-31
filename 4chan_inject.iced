@@ -1,9 +1,17 @@
+interval = null
+
 chrome.runtime.onMessage.addListener (request, sender, sendResponse) ->
   return unless request.action is 'highlight_posts'
+
+  clearInterval interval if interval?
 
   matcher = new RegExp request.matcher
   mobileMatch = /mobile/
   opMatch = /post op/
+
+  sendResponse text: 'kay'
+
+  await interval = setInterval defer(), 1000
 
   for quoteLink in $ 'a[title="Quote this post"]'
     info = quoteLink.parentElement.parentElement
