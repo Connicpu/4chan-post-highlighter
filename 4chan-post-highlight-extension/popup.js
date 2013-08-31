@@ -100,7 +100,7 @@ PostHighlighter = (function() {
     (function(__iced_k) {
       __iced_deferrals = new iced.Deferrals(__iced_k, {
         parent: ___iced_passed_deferral,
-        filename: "popup.iced",
+        filename: "4chan-post-highlight-extension\\popup.iced",
         funcname: "PostHighlighter.highlight_posts"
       });
       chrome.tabs.query({
@@ -119,7 +119,7 @@ PostHighlighter = (function() {
       (function(__iced_k) {
         __iced_deferrals = new iced.Deferrals(__iced_k, {
           parent: ___iced_passed_deferral,
-          filename: "popup.iced",
+          filename: "4chan-post-highlight-extension\\popup.iced",
           funcname: "PostHighlighter.highlight_posts"
         });
         chrome.tabs.sendMessage(tabs[0].id, {

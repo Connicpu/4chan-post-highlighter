@@ -59,7 +59,7 @@ chrome.tabs.onActivated.addListener(function(activeInfo) {
   (function(__iced_k) {
     __iced_deferrals = new iced.Deferrals(__iced_k, {
       parent: ___iced_passed_deferral,
-      filename: "background.iced"
+      filename: "4chan-post-highlight-extension\\background.iced"
     });
     chrome.tabs.get(activeInfo.tabId(__iced_deferrals.defer({
       assign_fn: (function() {
